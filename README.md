@@ -1,6 +1,6 @@
 # WaterDock2.0
 
-This is a Command line interface og WaterDock2.0
+This is a Command line interface of WaterDock2.0
 
 To run 
 python waterdock2.py proteinfile.pdbqt ligandfile.pdb
