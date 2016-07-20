@@ -2,7 +2,8 @@
 
 This is a Command line interface of WaterDock2.0
 
-To run 
+To run
+
 python waterdock2.py proteinfile.pdbqt ligandfile.pdb
 
 Dependencies
@@ -12,3 +13,10 @@ Dependencies
 -- numpy (any version compatible with your MDAnalysis build)
 
 -- scipy (version does not matter)
+
+
+FILE FORMATS
+
+Protein File -- *pdbqt*
+
+Ligand File -- *pdb/mol2*
