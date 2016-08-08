@@ -73,7 +73,66 @@ def carbonylorcarboxyl(allligand,index,bond_dist):
 
 ######################################################################################################################################################################
 ######################################################################################################################################################################
+def matefinder(allligand,index):
 
+	RH = 0.35
+	RC = 0.73
+	RO = 0.69
+	RN = 0.66
+	RS = 0.96
+	RP = 1.04
+	RF = 0.68
+	RCl = 0.95
+	RCL = 0.95
+	RBr = 1.08
+	RBR = 1.08
+	
+	indextype = str(allligand[index].type)
+	indexvariable = 'R' + indextype
+	indexradii = float(eval(indexvariable))
+
+	allligandcoods = allligand.positions
+	indexcoods = np.zeros((1,3), dtype = float)
+	indexcoods[0,:] = allligandcoods[index,:]
+	indexcoods = np.float32(indexcoods)
+
+	numatoms = allligand.n_atoms
+	radiimatrix = np.zeros((numatoms), dtype = float)
+
+	for i in xrange(0,numatoms):
+		attype = str(allligand[i].type)
+		variable = 'R' + attype
+		radiimatrix[i] = float(eval(variable))
+
+	rij = radiimatrix + indexradii
+	Dij = MDAnalysis.lib.distances.distance_array(allligandcoods, indexcoods)
+	
+	offset = np.zeros((numatoms), dtype = float)
+
+	for i in xrange(0,numatoms):
+		if Dij[i,0] < 1.5:
+			offset[i] = 0.15 * Dij[i,0]
+
+		elif Dij[i,0] > 1.5 and Dij[i,0] < 1.9:
+			offset[i] = 0.11 * Dij[i,0]
+
+		elif Dij[i,0] > 1.9 and Dij[i,0] < 2.05:
+			offset[i] = 0.09 * Dij[i,0]
+
+		elif Dij[i,0] > 2.05:
+			offset[i] = 0.08 * Dij[i,0]
+
+	upperlimit = rij + offset
+	lowerlimit = rij/2.0
+	Dij = np.ndarray.flatten(Dij)
+	A = np.where((Dij > lowerlimit) & (Dij < upperlimit))
+	mates = np.ravel_multi_index(A, Dij.shape)
+
+	return mates
+
+
+######################################################################################################################################################################
+######################################################################################################################################################################
 def Otypefinder(allligand,index,bond_dist):
 
 	allligandcoods = allligand.positions
@@ -83,9 +142,7 @@ def Otypefinder(allligand,index,bond_dist):
 
 	otype = 'NONE'
 
-	tempdist = MDAnalysis.lib.distances.distance_array(allligandcoods, ocoods)
-	A = np.where((tempdist < bond_dist) & (tempdist > 0.1))
-	mates = np.ravel_multi_index(A, tempdist.shape)
+	mates = matefinder(allligand, index)
 	nummates = np.size(mates)
 
 	numS = 0
@@ -139,9 +196,7 @@ def Ntypefinder(allligand,index,bond_dist):
 	ncoods[0,:] = allligandcoods[index,:]
 	ncoods = np.float32(ncoods)
 
-	tempdist = MDAnalysis.lib.distances.distance_array(allligandcoods, ncoods)
-	A = np.where((tempdist < bond_dist) & (tempdist > 0.1))
-	mates = np.ravel_multi_index(A, tempdist.shape)
+	mates = matefinder(allligand, index)
 	nummates = np.size(mates)
 	
 	ntype = 'NONE'
@@ -169,7 +224,6 @@ def Ntypefinder(allligand,index,bond_dist):
 			ntype = 'imine'
 
 	elif nummates == 3:
-
 		if numH == 0:
 			ntype = '3tertamine'
 		elif numH == 1:
@@ -364,9 +418,7 @@ def secaminewater(allligand,index,bond_dist):
 	ncoods[0,:] = allligandcoods[index,:]
 	ncoods = np.float32(ncoods)
 
-	tempdist = MDAnalysis.lib.distances.distance_array(allligandcoods, ncoods)
-	A = np.where((tempdist < bond_dist) & (tempdist > 0.1))
-	mates = np.ravel_multi_index(A, tempdist.shape)
+	mates = matefinder(allligand, index)
 	nummates = np.size(mates)
 	hcoods = np.zeros((1,3), dtype = float)
 	q = 0
@@ -393,9 +445,7 @@ def priaminewater(allligand,index,bond_dist):
 	ncoods[0,:] = allligandcoods[index,:]
 	ncoods = np.float32(ncoods)
 
-	tempdist = MDAnalysis.lib.distances.distance_array(allligandcoods, ncoods)
-	A = np.where((tempdist < bond_dist) & (tempdist > 0.1))
-	mates = np.ravel_multi_index(A, tempdist.shape)
+	mates = matefinder(allligand, index)
 	nummates = np.size(mates)
 	hcoods = np.zeros((2,3), dtype = float)
 
@@ -509,9 +559,7 @@ def ammoniawater(allligand,index,bond_dist):
 	ncoods[0,:] = allligandcoods[index,:]
 	ncoods = np.float32(ncoods)
 
-	tempdist = MDAnalysis.lib.distances.distance_array(allligandcoods, ncoods)
-	A = np.where((tempdist < bond_dist) & (tempdist > 0.1))
-	mates = np.ravel_multi_index(A, tempdist.shape)
+	mates = matefinder(allligand, index)
 	nummates = np.size(mates)
 	hcoods = np.zeros((3,3), dtype = float)
 
@@ -827,15 +875,16 @@ def main(ligandinputfilename):
 		atype = 'NONE'
 		atom = str(allligand[i].type)
 		if atom == 'O':
+
 			atype = Otypefinder(allligand,i,bond_dist)
 	
 		elif atom == 'N':
 			atype = Ntypefinder(allligand,i,bond_dist)
 	
-		elif atom == 'Cl' or atom == 'F' or atom == 'Br':
+		elif atom == 'Cl' or atom == 'F' or atom == 'Br' or atom == 'CL' or atom == 'BR':
 			atype = 'halogen'
 		
-	
+		
 		if atype == 'carbonyl':
 			tempwatercood = carbonylwaters(allligand, i, bond_dist)
 			waters = np.concatenate((waters,tempwatercood), axis = 0)
