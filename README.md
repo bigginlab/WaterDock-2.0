@@ -1,11 +1,10 @@
 # WaterDock2.0
-# Original Python2 version of WaterDock2.0 written by Akshay Sridhar (https://doi.org/10.1371/journal.pone.0172743)
-# based on the original WaterDock method
-# developed by Greg Ross (https://doi.org/10.1371/journal.pone.0032036) 
-# This version (conversion to Python3) by Philip Biggin
-# Should be available from https://github.com/bigginlab/
-# Comments and queuries should be address to philip.biggin@bioch.ox.ac.uk 
-# For the python2 version, you should visit:  https://github.com/akshay-sridhar/WaterDock2.0
+# This is an updated to Python3 version of WaterDock2.0 (conversion by Phil Biggin) https://github.com/bigginlab/
+# If you still need the  python2 version, you should visit:  https://github.com/akshay-sridhar/WaterDock2.0
+
+Original Python2 version of WaterDock2.0 written by Akshay Sridhar (https://doi.org/10.1371/journal.pone.0172743)
+based on the original WaterDock method developed by Greg Ross (https://doi.org/10.1371/journal.pone.0032036) 
+Comments and queuries should be address to philip.biggin@bioch.ox.ac.uk 
 
 This is a Command line interface of WaterDock2.0 now updated to work with python 
 
