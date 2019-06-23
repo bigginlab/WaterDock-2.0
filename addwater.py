@@ -17,7 +17,7 @@ def writewaterfile(filename, watercoods):
 	numwater = watercoods.shape[0]
 	f1 = open(filename,'w')
 
-	for j in xrange(0,numwater):
+	for j in range(0,numwater):
 		header = 'HETATM'
 		serial = j+1
 		name = 'OW'
@@ -54,7 +54,7 @@ def carbonylorcarboxyl(allligand,index,bond_dist):
 	tempdist2 = MDAnalysis.lib.distances.distance_array(Omatecood, allligandcoods)
 	B = np.argsort(tempdist2)
 	B = np.delete(B,0,axis = 1)
-	for i in xrange(0,B.size):
+	for i in range(0,B.size):
 		if B[0,i] == index:
 			C = np.delete(B,i,axis = 1)
 			break
@@ -99,7 +99,7 @@ def matefinder(allligand,index):
 	numatoms = allligand.n_atoms
 	radiimatrix = np.zeros((numatoms), dtype = float)
 
-	for i in xrange(0,numatoms):
+	for i in range(0,numatoms):
 		attype = str(allligand[i].type)
 		variable = 'R' + attype
 		radiimatrix[i] = float(eval(variable))
@@ -109,7 +109,7 @@ def matefinder(allligand,index):
 	
 	offset = np.zeros((numatoms), dtype = float)
 
-	for i in xrange(0,numatoms):
+	for i in range(0,numatoms):
 		if Dij[i,0] < 1.5:
 			offset[i] = 0.15 * Dij[i,0]
 
@@ -264,7 +264,7 @@ def carbonylwaters(allligand,index,bond_dist):
 	tempdist2 = MDAnalysis.lib.distances.distance_array(Omatecood, allligandcoods)
 	B = np.argsort(tempdist2)
 	B = np.delete(B,0,axis = 1)
-	for i in xrange(0,B.size):
+	for i in range(0,B.size):
 		if B[0,i] == index:
 			C = np.delete(B,i,axis = 1)
 
@@ -281,7 +281,7 @@ def carbonylwaters(allligand,index,bond_dist):
 
 	V = (D*yaxis)
 
-	for i in xrange(0,5):
+	for i in range(0,5):
 		degreeangle = -70.0 + (i*35)
 		radangle = np.pi*(degreeangle/180)
 		#Rotation Matrix
@@ -296,7 +296,7 @@ def carbonylwaters(allligand,index,bond_dist):
 		partC = (1-np.cos(radangle)) * np.dot(zaxis,np.transpose(V)) * zaxis
 		watercood[i,:] = partA + partB + partC
 
-	for i in xrange(5,8):
+	for i in range(5,8):
 		degreeangle = -35.0
 		radangle = np.pi*(degreeangle/180)
 		#Rotation Matrix
@@ -311,7 +311,7 @@ def carbonylwaters(allligand,index,bond_dist):
 		partZ = (1-np.cos(radangle)) * np.dot(xaxis,np.transpose(watercood[i-4,:])) * xaxis
 		watercood[i,:] = partX + partY + partZ
 
-	for i in xrange(8,11):
+	for i in range(8,11):
 		degreeangle = 35.0
 		radangle = np.pi*(degreeangle/180)
 		#Rotation Matrix
@@ -351,7 +351,7 @@ def carboxylwaters(allligand,index,bond_dist):
 	tempdist2 = MDAnalysis.lib.distances.distance_array(Omatecood, allligandcoods)
 	B = np.argsort(tempdist2)
 	B = np.delete(B,0,axis = 1)
-	for i in xrange(0,B.size):
+	for i in range(0,B.size):
 		if B[0,i] == index:
 			C = np.delete(B,i,axis = 1)
 
@@ -369,7 +369,7 @@ def carboxylwaters(allligand,index,bond_dist):
 	V = (D*yaxis)
 	count = 0
 
-	for i in xrange(0,5):
+	for i in range(0,5):
 		
 		degreeangle1 = -70.0 + (i*35)
 		radangle1 = np.pi*(degreeangle1/180)
@@ -386,7 +386,7 @@ def carboxylwaters(allligand,index,bond_dist):
 		V2 = partA + partB + partC
 		
 		
-		for j in xrange(0,5):
+		for j in range(0,5):
 
 			degreeangle2 = -70.0 + (j*35)
 			radangle2 = np.pi*(degreeangle2/180)
@@ -503,7 +503,7 @@ def threesecaminewater(allligand,index,bond_dist):
 	tempdist = MDAnalysis.lib.distances.distance_array(allligandcoods,ncoods)
 	A = np.argsort(tempdist[:,0])
 
-	for i in xrange(1,4):
+	for i in range(1,4):
 		if allligand[A[i]].type == 'H':
 			vector1 = unitvector(allligandcoods[A[i],:] - ncoods[0,:])
 			watercood[0,:] = ncoods + (D*vector1)
@@ -533,7 +533,7 @@ def threepriaminewater(allligand,index,bond_dist):
 	A = np.argsort(tempdist[:,0])
 
 	j = 0
-	for i in xrange(1,4):
+	for i in range(1,4):
 		if allligand[A[i]].type == 'H':
 			vector1 = unitvector(allligandcoods[A[i],:] - ncoods[0,:])
 			watercood[j,:] = ncoods + (D*vector1)
@@ -602,7 +602,7 @@ def largeatom(allligand,index,bond_dist):
 	tempdist2 = MDAnalysis.lib.distances.distance_array(Omatecood, allligandcoods)
 	B = np.argsort(tempdist2)
 	B = np.delete(B,0,axis = 1)
-	for i in xrange(0,B.size):
+	for i in range(0,B.size):
 		if B[0,i] == index:
 			C = np.delete(B,i,axis = 1)
 
@@ -623,7 +623,7 @@ def largeatom(allligand,index,bond_dist):
 	V = (D*yaxis)
 	count = 0
 
-	for i in xrange(0,5):
+	for i in range(0,5):
 		
 		degreeangle1 = -70.0 + (i*35)
 		radangle1 = np.pi*(degreeangle1/180)
@@ -640,7 +640,7 @@ def largeatom(allligand,index,bond_dist):
 		V2 = partA + partB + partC
 		
 		
-		for j in xrange(0,5):
+		for j in range(0,5):
 
 			degreeangle2 = -70.0 + (j*35)
 			radangle2 = np.pi*(degreeangle2/180)
@@ -691,7 +691,7 @@ def etherwater(allligand,index,bond_dist):
 	watercood = np.zeros((5,3), dtype = float)
 	V = D * yaxis
 
-	for i in xrange(0,5):
+	for i in range(0,5):
 		degreeangle = -70.0 + (i*35)
 		radangle = np.pi*(degreeangle/180)
 		#Rotation Matrix
@@ -738,7 +738,7 @@ def iminewater(allligand,index,bond_dist):
 	watercood = np.zeros((5,3), dtype = float)
 	V = D * yaxis
 
-	for i in xrange(0,5):
+	for i in range(0,5):
 		degreeangle = -70.0 + (i*35)
 		radangle = np.pi*(degreeangle/180)
 		#Rotation Matrix
@@ -772,7 +772,7 @@ def hydroxylwater(allligand,index,bond_dist):
 	base1cood = np.zeros((1,3), dtype = float)
 	base2cood = np.zeros((1,3), dtype = float)
 	
-	for i in xrange(0,3):
+	for i in range(0,3):
 		if allligand[A[0,i]].type == 'H':
 			hindex = A[0,i]
 
@@ -790,7 +790,7 @@ def hydroxylwater(allligand,index,bond_dist):
 	V = D * yaxis
 	count = 0
 
-	for i in xrange(0,5):
+	for i in range(0,5):
 		degreeangle = -70.0 + (i*35)
 		radangle = np.pi*(degreeangle/180)
 		#Rotation Matrix
@@ -805,7 +805,7 @@ def hydroxylwater(allligand,index,bond_dist):
 		partC = (1-np.cos(radangle)) * np.dot(xaxis,np.transpose(V)) * xaxis
 		Vec1 = partA + partB + partC
 
-		for j in xrange(0,2):
+		for j in range(0,2):
 
 			degreeangle2 = -17.5 + (j*35.0)
 			radangle2 = np.pi*(degreeangle2/180)
@@ -871,7 +871,7 @@ def main(ligandinputfilename):
 	f1 = open('waterdetails.txt','w')
 
 
-	for i in xrange(0,numatoms):
+	for i in range(0,numatoms):
 		atype = 'NONE'
 		atom = str(allligand[i].type)
 		if atom == 'O':

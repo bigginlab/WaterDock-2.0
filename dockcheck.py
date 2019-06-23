@@ -9,7 +9,7 @@ def writewaterfile(filename, watercoods, finalwaterscores):
 	numwater = watercoods.shape[0]
 	f1 = open(filename,'w')
 
-	for j in xrange(0,numwater):
+	for j in range(0,numwater):
 		header = 'HETATM'
 		serial = j+1
 		name = 'OW'
@@ -54,7 +54,7 @@ def main(proteinfilename, ligandfilename):
 	tempdist = MDAnalysis.lib.distances.distance_array(trialwatercoods,proteincoods)
 	watprodist = np.amin(tempdist, axis = 1)
 
-	for i in xrange(0,numtrialwaters):
+	for i in range(0,numtrialwaters):
 
 		if watprodist[i] < 3.6 and watprodist[i] > 2.00:
 
@@ -85,7 +85,7 @@ def main(proteinfilename, ligandfilename):
 		temppredictedwatercoods = np.float32(temppredictedwatercoods)
 		temppredictedwaterscores = np.zeros((numclust,1), dtype = float)
 
-		for i in xrange(1,numclust+1):
+		for i in range(1,numclust+1):
 			clusttemp = np.compress(fit == i, predictedwatercoods, axis = 0)
 			tempavg = np.mean(clusttemp, axis = 0)
 			temppredictedwatercoods[i-1,:] = tempavg
@@ -132,7 +132,7 @@ def main(proteinfilename, ligandfilename):
 		if nummates > allowedwaters:
 
 			numdiscardedwaters = nummates - allowedwaters
-			for j in xrange(0,numdiscardedwaters):
+			for j in range(0,numdiscardedwaters):
 
 				high = np.argmax(matescores)
 				removedindex = mates[high]
