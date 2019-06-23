@@ -26,11 +26,11 @@ This will output a single file called "predictedwaters.pdb", which contains the 
 -- scipy (version does not matter)
 
 
-# FILE FORMATS
+# File Formats
 
-Protein File -- *pdbqt*
+Protein File -- *pdbqt* - the Autodock format of a PDB with charge (Q) and atom type (T)
 
-Ligand File -- *pdb/mol2*
+Ligand File -- *pdb/mol2*  sybyl mol2 format
 
 # Examples/Tests
 
