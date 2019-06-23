@@ -6,16 +6,18 @@ Original Python2 version of WaterDock2.0 written by Akshay Sridhar (https://doi.
 based on the original WaterDock method developed by Greg Ross (https://doi.org/10.1371/journal.pone.0032036) 
 Comments and queuries should be address to philip.biggin@bioch.ox.ac.uk 
 
-This is a Command line interface of WaterDock2.0 now updated to work with python 
+This is a Command line interface of WaterDock2.0 for python
 
-To run
+
+
+#To run
 
 python waterdock2.py proteinfile.pdbqt ligandfile.pdb
 
 This will output a single file called "predictedwaters.pdb", which contains the predictions of the oxygen positions.
 
 
-Dependencies
+#Dependencies
 
 -- MDAnalysis (version >= 0.13)
 
@@ -24,13 +26,13 @@ Dependencies
 -- scipy (version does not matter)
 
 
-FILE FORMATS
+#FILE FORMATS
 
 Protein File -- *pdbqt*
 
 Ligand File -- *pdb/mol2*
 
-Examples/Tests
+#Examples/Tests
 
 An example protein (example-protein.pdbqt) and an example ligand are provide (example-ligand.pdb)
 
