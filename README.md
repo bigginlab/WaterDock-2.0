@@ -1,5 +1,5 @@
 # WaterDock2.0
-# This is an updated to Python3 version of WaterDock2.0 (conversion by Phil Biggin) https://github.com/bigginlab/
+# This is an updated to Python3 version of WaterDock2.0 https://github.com/bigginlab/
 # If you still need the  python2 version, you should visit:  https://github.com/akshay-sridhar/WaterDock2.0
 
 Original Python2 version of WaterDock2.0 written by Akshay Sridhar (https://doi.org/10.1371/journal.pone.0172743)
