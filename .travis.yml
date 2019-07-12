@@ -6,6 +6,9 @@ python:
   - "3.6"
   - "3.7"
 
+virtualenv:
+  system_site_packages: true
+
 before_install:
   - sudo apt-get python3-setuptools python3-pip
 
