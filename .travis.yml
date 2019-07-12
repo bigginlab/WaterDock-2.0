@@ -6,6 +6,9 @@ python:
   - "3.6"
   - "3.7"
 
+before_install:
+  - sudo apt-get python3-setuptools python3-pip
+
 install:
   - pip3 install --user -r requirements.txt
 
