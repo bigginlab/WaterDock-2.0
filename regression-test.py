@@ -15,7 +15,7 @@ Test compares this to expected-predictedwaters.pdb
 import sys
 import os
 
-os.system("waterdock2.py example-protein.pdbqt example-ligand.pdb")
+os.system("python ./waterdock2.py example-protein.pdbqt example-ligand.pdb")
 
 f1=open("expected-predictedwaters.pdb","r")
 f2=open("predictedwaters.pdb","r")
