@@ -16,7 +16,10 @@ python waterdock2.py proteinfile.pdbqt ligandfile.pdb
 This will output a single file called "predictedwaters.pdb", which contains the predictions of the oxygen positions.
 
 
-Dependencies
+Example input files are included as example-protein.pdbqt and example-ligand.pdb
+
+
+Dependencie
 
 -- MDAnalysis (version >= 0.13)
 

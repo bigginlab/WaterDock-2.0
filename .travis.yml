@@ -6,7 +6,12 @@ python:
 
 before_install:
     - python -m pip install --upgrade pip
+    - sudo apt-get install -y autodock-vina
+
 
 install:
     - pip install -r requirements.txt
+
+scripts:
+    - python regression-test.py
 
