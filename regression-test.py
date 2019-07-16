@@ -16,7 +16,7 @@ import sys
 import os
 import waterdock2
 
-waterdock2 protein.pdbqt ligandH.pdb 
+os.system("waterdock2.py example-protein.pdbqt example-ligand.pdb")
 
 f1=open("expected-predictedwaters.pdb","r")
 f2=open("predictedwaters.pdb","r")
