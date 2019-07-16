@@ -19,7 +19,7 @@ This will output a single file called "predictedwaters.pdb", which contains the 
 Example input files are included as example-protein.pdbqt and example-ligand.pdb
 
 
-Dependencie
+Dependencies
 
 -- MDAnalysis (version >= 0.13)
 
@@ -42,7 +42,7 @@ python waterdock2.py example-protein.pdbqt example-ligand.pdb
 
 will generate predictedwaters.pdb which should contain 3 predicted water molecule locations.
 
-You can check the result of the prediction in pymol or compare it directly to the file "expected-preictedwaters.pdb"
+You can check the result of the prediction in pymol or compare it directly to the file "expected-predictedwaters.pdb"
 
 
 
