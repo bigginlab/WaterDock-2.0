@@ -1,8 +1,11 @@
 language: python
 dist: xenial
 
-python:
-    - 3.6
+matrix:
+  include:
+    - python:  3.6
+      env:  NUMPY=1.15
+
 
 before_install:
     - python -m pip install --upgrade pip
