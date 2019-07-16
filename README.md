@@ -42,5 +42,7 @@ python waterdock2.py example-protein.pdbqt example-ligand.pdb
 
 will generate predictedwaters.pdb which should contain 3 predicted water molecule locations.
 
-You can check the result of the prediction in pymol
+You can check the result of the prediction in pymol or compare it directly to the file "expected-preictedwaters.pdb"
+
+
 
