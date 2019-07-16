@@ -14,7 +14,6 @@ Test compares this to expected-predictedwaters.pdb
 
 import sys
 import os
-import waterdock2
 
 os.system("waterdock2.py example-protein.pdbqt example-ligand.pdb")
 
