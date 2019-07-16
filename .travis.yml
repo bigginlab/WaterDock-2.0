@@ -4,7 +4,7 @@ dist: xenial
 matrix:
   include:
     - python:  3.6
-      env:  NUMPY=1.15
+      env:  NUMPY=1.15.4
 
 
 before_install:
