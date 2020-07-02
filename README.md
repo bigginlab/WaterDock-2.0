@@ -20,7 +20,7 @@ This will output a single file called "predictedwaters.pdb", which contains the 
 Example input files are included as example-protein.pdbqt and example-ligand.pdb
 
 
-Dependencies
+# Dependencies
 
 -- MDAnalysis (version >= 0.13)
 
