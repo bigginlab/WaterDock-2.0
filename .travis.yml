@@ -1,4 +1,5 @@
 language: python
+<<<<<<< HEAD
 dist: xenial
 
 matrix:
@@ -20,4 +21,17 @@ install:
 
 script:
     - python regression-test.py
+=======
+sudo:true
+dist: xenial
+
+python:
+    - 3.6
+
+before_install:
+    - python -m pip install --upgrade pip
+
+install:
+    - pip install -r requirements.txt
+>>>>>>> 8a92dc3d5af435714d7f5d6ec7b3582335db4b3c
 

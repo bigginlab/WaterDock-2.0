@@ -1,15 +1,16 @@
 # WaterDock2.0
-# Original Python2 version of WaterDock2.0 written by Akshay Sridhar (https://doi.org/10.1371/journal.pone.0172743)
-# based on the original WaterDock method
-# developed by Greg Ross (https://doi.org/10.1371/journal.pone.0032036) 
-# This version (conversion to Python3) by Philip Biggin
-# Should be available from https://github.com/bigginlab/
-# Comments and queuries should be address to philip.biggin@bioch.ox.ac.uk 
-# For the python2 version, you should visit:  https://github.com/akshay-sridhar/WaterDock2.0
+# This is an updated to Python3 version of WaterDock2.0 https://github.com/bigginlab/WaterDock-2.0
+# If you still need the  python2 version, you should visit:  https://github.com/akshay-sridhar/WaterDock2.0
 
-This is a Command line interface of WaterDock2.0 now updated to work with python 
+Original Python2 version of WaterDock2.0 written by Akshay Sridhar (https://doi.org/10.1371/journal.pone.0172743)
+based on the original WaterDock method developed by Greg Ross (https://doi.org/10.1371/journal.pone.0032036) 
+Comments and queuries should be address to philip.biggin@bioch.ox.ac.uk 
 
-To run
+This is a Command line interface of WaterDock2.0 for python
+
+
+
+# To run
 
 python waterdock2.py proteinfile.pdbqt ligandfile.pdb
 
@@ -28,13 +29,13 @@ Dependencies
 -- scipy (version does not matter)
 
 
-FILE FORMATS
+# File Formats
 
-Protein File -- *pdbqt*
+Protein File -- *pdbqt* - the Autodock format of a PDB with charge (Q) and atom type (T)
 
-Ligand File -- *pdb/mol2*
+Ligand File -- *pdb/mol2*  sybyl mol2 format
 
-Examples/Tests
+# Examples/Tests
 
 An example protein (example-protein.pdbqt) and an example ligand are provide (example-ligand.pdb)
 
