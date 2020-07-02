@@ -28,6 +28,8 @@ Example input files are included as example-protein.pdbqt and example-ligand.pdb
 
 -- scipy (version does not matter)
 
+-- vina (note on Mac Catalina, you may have to obtain the 64bit version directly from http://vina.scripps.edu/download.html) 
+
 
 # File Formats
 
