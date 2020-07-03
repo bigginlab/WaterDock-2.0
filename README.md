@@ -1,6 +1,6 @@
 # WaterDock2.0
 
-![flake8](https://github.com/bigginlab/WaterDock-2.0/workflows/flake8/badge.svg?branch=master)
+![flake8](https://github.com/bigginlab/WaterDock-2.0/workflows/flake8/badge.svg?branch=master) ![mypy](https://github.com/bigginlab/WaterDock-2.0/workflows/mypy/badge.svg)
 
 # This is an updated to Python3 version of WaterDock2.0 https://github.com/bigginlab/WaterDock-2.0
 # If you still need the  python2 version, you should visit:  https://github.com/akshay-sridhar/WaterDock2.0
