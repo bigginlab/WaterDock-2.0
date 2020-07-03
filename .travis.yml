@@ -1,5 +1,3 @@
-language: python
-<<<<<<< HEAD
 dist: xenial
 
 matrix:
@@ -9,10 +7,12 @@ matrix:
 
 
 before_install:
-    - pip uninstall --yes numpy
+   - uname -a
+   - df -h
+   - ulimit -a
+
     - pip uninstall --yes numpy
     - python -m pip install --upgrade pip
-    - pip uninstall --yes numpy
     - sudo apt-get install -y autodock-vina
 
 
@@ -21,17 +21,15 @@ install:
 
 script:
     - python regression-test.py
-=======
-sudo:true
-dist: xenial
 
-python:
-    - 3.6
+    # Run checks
+  - flake8
+  - mypy
 
-before_install:
-    - python -m pip install --upgrade pip
+after_success:
+    # Upload coverage report to codecov
+  #- codecov
 
-install:
-    - pip install -r requirements.txt
->>>>>>> 8a92dc3d5af435714d7f5d6ec7b3582335db4b3c
+notifications:
+    email: false
 
