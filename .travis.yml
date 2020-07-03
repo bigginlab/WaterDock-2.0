@@ -1,4 +1,27 @@
 language: python
+<<<<<<< HEAD
+dist: xenial
+
+matrix:
+  include:
+    - python:  3.6
+      env:  NUMPY=1.15.4
+
+
+before_install:
+    - pip uninstall --yes numpy
+    - pip uninstall --yes numpy
+    - python -m pip install --upgrade pip
+    - pip uninstall --yes numpy
+    - sudo apt-get install -y autodock-vina
+
+
+install:
+    - pip install -r requirements.txt
+
+script:
+    - python regression-test.py
+=======
 sudo:true
 dist: xenial
 
@@ -10,4 +33,5 @@ before_install:
 
 install:
     - pip install -r requirements.txt
+>>>>>>> 8a92dc3d5af435714d7f5d6ec7b3582335db4b3c
 

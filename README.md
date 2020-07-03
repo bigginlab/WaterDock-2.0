@@ -17,6 +17,9 @@ python waterdock2.py proteinfile.pdbqt ligandfile.pdb
 This will output a single file called "predictedwaters.pdb", which contains the predictions of the oxygen positions.
 
 
+Example input files are included as example-protein.pdbqt and example-ligand.pdb
+
+
 # Dependencies
 
 -- MDAnalysis (version >= 0.13)
@@ -24,6 +27,8 @@ This will output a single file called "predictedwaters.pdb", which contains the 
 -- numpy (any version compatible with your MDAnalysis build)
 
 -- scipy (version does not matter)
+
+-- vina (note on Mac Catalina, you may have to obtain the 64bit version directly from http://vina.scripps.edu/download.html) 
 
 
 # File Formats
@@ -40,5 +45,7 @@ python waterdock2.py example-protein.pdbqt example-ligand.pdb
 
 will generate predictedwaters.pdb which should contain 3 predicted water molecule locations.
 
-You can check the result of the prediction in pymol
+You can check the result of the prediction in pymol or compare it directly to the file "expected-predictedwaters.pdb"
+
+
 

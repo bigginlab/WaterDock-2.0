@@ -1,0 +1,7 @@
+REMARK  The pdbqt file for using water as a ligand
+ROOT
+ATOM      1  OW  HOH   231       0.950  11.375  16.494  1.00  0.00    -0.411 OA
+ATOM      2  HW1 HOH   231       1.766  11.375  17.071  1.00  0.00     0.205 HD
+ATOM      3  HW2 HOH   231       0.134  11.375  17.071  1.00  0.00     0.205 HD
+ENDROOT
+TORSDOF 0
