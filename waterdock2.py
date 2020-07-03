@@ -33,9 +33,6 @@ def waterfile():
 
 proteinfile, ligandfile = sys.argv[1], sys.argv[2]
 
-
-
-
 if int(os.path.isfile(proteinfile)) == 0:
     sys.exit('Protein File does not exist')
 
