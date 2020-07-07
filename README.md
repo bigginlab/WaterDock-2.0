@@ -41,6 +41,10 @@ Protein File -- *pdbqt* - the Autodock format of a PDB with charge (Q) and atom 
 
 Ligand File -- *pdb/mol2*  sybyl mol2 format
 
+Note that both the ligand and the protein file should have the correction protonation state.   
+
+To generate the receptor pdbqt file, we recommend AutoDockTools (ADT), but if you are on a Mac with Catalina there is currently no 64-bit version.   In that case you might be avle to use the AFR package (see here https://ccsb.scripps.edu/adfr/how-to-create-a-pdbqt-for-my-receptor/)
+
 # Examples/Tests
 
 An example protein (example-protein.pdbqt) and an example ligand are provide (example-ligand.pdb)
