@@ -43,7 +43,7 @@ Ligand File -- *pdb/mol2*  sybyl mol2 format
 
 Note that both the ligand and the protein file should have the correction protonation state.   
 
-To generate the receptor pdbqt file, we recommend AutoDockTools (ADT), but if you are on a Mac with Catalina there is currently no 64-bit version.   In that case you might be avle to use the AFR package (see here https://ccsb.scripps.edu/adfr/how-to-create-a-pdbqt-for-my-receptor/)
+To generate the receptor pdbqt file, we recommend AutoDockTools (ADT - get MGLTools from http://mgltools.scripps.edu/downloads), but if you are on a Mac with Catalina there is currently no 64-bit version.   In that case you might be avle to use the AFR package (see here https://ccsb.scripps.edu/adfr/how-to-create-a-pdbqt-for-my-receptor/)
 
 # Examples/Tests
 
