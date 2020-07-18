@@ -1,10 +1,10 @@
-#WaterDock-2.0 Detailed Instructions#
+#WaterDock-2.0 Detailed Instructions
 
 This is a more detailed version of README.md
 
 N.B. The command line commands in this text file work for Mac but may not work for Windows and Linux. You might need to look up the equivalent commands for these operating systems.
 
-##HOW TO SET UP WATERDOCK-2.0 (DETAILED)##
+##HOW TO SET UP WATERDOCK-2.0 (DETAILED)
 
 1.   Download the zip file or clone using GitHub.
      - The command for cloning it on GitHub is `git clone https://github.com/bigginlab/WaterDock-2.0.git`
@@ -42,7 +42,7 @@ If you get that result, you have WaterDock-2.0 working!
 
 
 
-##HOW TO RUN WATERDOCK-2.0 ON YOUR OWN PROTEIN-LIGAND COMPLEXES##
+##HOW TO RUN WATERDOCK-2.0 ON YOUR OWN PROTEIN-LIGAND COMPLEXES
 
 1.   Download the protein-ligand complex pdf file from the Protein Databank  (https://www.rcsb.org/)
      - 1g9v is being used as an example for the command line commands.
