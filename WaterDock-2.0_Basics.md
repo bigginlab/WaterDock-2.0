@@ -1,4 +1,4 @@
-###WaterDock-2.0 Detailed Instructions###
+#WaterDock-2.0 Detailed Instructions#
 
 This is a more detailed version of README.md
 
