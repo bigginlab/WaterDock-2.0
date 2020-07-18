@@ -1,13 +1,13 @@
-#WaterDock-2.0 Detailed Instructions
+# WaterDock-2.0 Detailed Instructions
 
 This is a more detailed version of README.md
 
 N.B. The command line commands in this text file work for Mac but may not work for Windows and Linux. You might need to look up the equivalent commands for these operating systems.
 
-##HOW TO SET UP WATERDOCK-2.0 (DETAILED)
+## HOW TO SET UP WATERDOCK-2.0 
 
 1.   Download the zip file or clone using GitHub.
-     - The command for cloning it on GitHub is `git clone https://github.com/bigginlab/WaterDock-2.0.git`
+     - `git clone https://github.com/bigginlab/WaterDock-2.0.git`
 
 
 2.   Have Python 3.7+.
@@ -42,7 +42,7 @@ If you get that result, you have WaterDock-2.0 working!
 
 
 
-##HOW TO RUN WATERDOCK-2.0 ON YOUR OWN PROTEIN-LIGAND COMPLEXES
+## HOW TO RUN WATERDOCK-2.0 ON YOUR OWN PROTEIN-LIGAND COMPLEXES
 
 1.   Download the protein-ligand complex pdf file from the Protein Databank  (https://www.rcsb.org/)
      - 1g9v is being used as an example for the command line commands.
@@ -64,8 +64,7 @@ If you get that result, you have WaterDock-2.0 working!
 
 
 5.   Reduce the protein and ligand files using this command line command.
-      - ```$ADFRsuite_INSTALL_DIR/bin/reduce ~/Download/1g9v_prot.pdb > 1g9v_protH.pdb`
-      - `$ADFRsuite_INSTALL_DIR/bin/reduce ~/Download/1g9v_lig.pdb > 1g9v_ligH.pdb```
+      - ```$ADFRsuite_INSTALL_DIR/bin/reduce ~/Download/1g9v_prot.pdb > 1g9v_protH.pdb  $ADFRsuite_INSTALL_DIR/bin/reduce ~/Download/1g9v_lig.pdb > 1g9v_ligH.pdb```
 
 
 6.   Convert the reduced protein file to a pdbqt file using the prepare_receptor.
