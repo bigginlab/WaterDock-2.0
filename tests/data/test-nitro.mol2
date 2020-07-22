@@ -1,0 +1,22 @@
+@<TRIPOS>MOLECULE
+
+7 6 1
+SMALL
+USER_CHARGES
+@<TRIPOS>ATOM
+1	C1     1.3785     0.1600     0.0286	C.3	1	noname	0.0414
+2	N1    -0.0068     0.0362     0.0014	N.2	1	noname	0.2238
+3	O1    -0.6714     0.7791    -0.6073	O.2	1	noname	-0.2447
+4	O2    -0.5905    -0.8718     0.6696	O.3	1	noname	-0.2447
+5	H1     1.7203     0.1905     1.0632	H	1	noname	0.0747
+6	H2     1.8296    -0.6932    -0.4780	H	1	noname	0.0747
+7	H3     1.6712     1.0797    -0.4780	H	1	noname	0.0747
+@<TRIPOS>BOND
+1	1	2	1
+2	2	3	2
+3	2	4	1
+4	1	5	1
+5	1	6	1
+6	1	7	1
+@<TRIPOS>SUBSTRUCTURE
+1	noname	1

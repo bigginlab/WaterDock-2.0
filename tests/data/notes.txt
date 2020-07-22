@@ -1,0 +1,5 @@
+test molecules created with marvin sketch, exported as mol2 then converted with obabel.  
+
+ATOM  replaced with HETATM for consistency
+
+

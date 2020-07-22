@@ -28,7 +28,7 @@ def writewaterfile(filename, watercoods):
         resSeq = j+1
         icode = ' '
         occupancy = 1.0
-        tempfactor = 0.0
+        tempfactor = 0.75  # in reality this holds the water score
         x = watercoods[j, 0]
         y = watercoods[j, 1]
         z = watercoods[j, 2]

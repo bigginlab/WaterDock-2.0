@@ -1,0 +1,4 @@
+1. complete Ntype and Otype tests
+2. dockchecker.py is not tested yet
+3. No teardown after tests at the minute
+
